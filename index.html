@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stemson — We've sat in the chair</title>
+<meta name="description" content="Stemson gets stalled enterprise platforms delivering again. ServiceNow first, and the same playbook works on every platform you run. EMEA and GCC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#14213D; --navy-2:#1C2B4B; --brass:#B08D57; --brass-light:#CDB07F;
+    --off:#F2EFE9; --text:#1B1F2A; --slate:#5A6678; --white:#FFFFFF;
+    --line:rgba(20,33,61,.14); --line-dark:rgba(242,239,233,.16);
+    --serif:"Newsreader", Cambria, Georgia, serif;
+    --sans:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --max:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:76px}
+  body{font-family:var(--sans);color:var(--text);background:var(--white);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  img,svg{display:block}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--navy);line-height:1.12;letter-spacing:-.01em}
+  h1{font-size:clamp(40px,5.4vw,68px)}
+  h2{font-size:clamp(32px,3.6vw,46px)}
+  h3{font-size:24px}
+  p.lead{font-size:20px;color:var(--slate);max-width:640px}
+  em.brass{font-style:italic;color:var(--brass)}
+  section{padding:112px 0}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:600;font-size:15px;text-decoration:none;padding:15px 24px;border-radius:2px;transition:all .2s ease;border:1px solid transparent;cursor:pointer}
+  .btn-brass{background:var(--brass);color:var(--navy)}
+  .btn-brass:hover{background:var(--brass-light)}
+  .btn-ghost{border-color:var(--line-dark);color:var(--off)}
+  .btn-ghost:hover{border-color:var(--brass);color:var(--brass-light)}
+  .btn-navy{background:var(--navy);color:var(--off)}
+  .btn-navy:hover{background:var(--navy-2)}
+  .arrow{transition:transform .2s ease}
+  .btn:hover .arrow{transform:translateX(4px)}
+
+  /* ---------- Header ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .3s ease, box-shadow .3s ease}
+  header.scrolled{background:rgba(20,33,61,.97);box-shadow:0 1px 0 var(--line-dark)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+  .logo{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--off)}
+  .logo .word{font-family:var(--serif);font-weight:500;font-size:21px;letter-spacing:.32em;padding-left:2px}
+  .nav ul{display:flex;gap:34px;list-style:none;align-items:center}
+  .nav ul a{text-decoration:none;color:rgba(242,239,233,.82);font-size:14.5px;font-weight:500;transition:color .2s}
+  .nav ul a:hover{color:var(--brass-light)}
+  .nav .btn{padding:11px 18px;font-size:14px}
+  .menu-btn{display:none;background:none;border:0;color:var(--off);cursor:pointer;padding:8px}
+
+  /* ---------- Hero ---------- */
+  .hero{background:var(--navy);color:var(--off);padding:170px 0 0;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .hero h1{color:var(--off);margin:22px 0 26px}
+  .hero p.lead{color:rgba(242,239,233,.78)}
+  .hero .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:38px}
+  .hero-art{position:relative}
+  .hero-art svg{width:100%;height:auto}
+  .hero-foot{margin-top:96px;border-top:1px solid var(--line-dark);display:grid;grid-template-columns:repeat(3,1fr)}
+  .hero-foot div{padding:28px 28px 32px 0}
+  .hero-foot div+div{padding-left:28px;border-left:1px solid var(--line-dark)}
+  .hero-foot strong{display:block;font-family:var(--serif);font-weight:500;font-size:21px;color:var(--off);margin-bottom:4px}
+  .hero-foot span{font-size:14.5px;color:rgba(242,239,233,.62)}
+  .draw path,.draw line,.draw circle{stroke-dasharray:1200;stroke-dashoffset:1200;animation:draw 3.2s ease forwards}
+  .draw .d2{animation-delay:.5s}.draw .d3{animation-delay:1s}.draw .d4{animation-delay:1.5s}
+  @keyframes draw{to{stroke-dashoffset:0}}
+
+  /* ---------- Problem ---------- */
+  .problem-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start}
+  .symptoms{display:grid;gap:0;border-top:1px solid var(--line)}
+  .symptom{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:26px 0;border-bottom:1px solid var(--line)}
+  .symptom .ic{color:var(--navy);width:40px;height:40px}
+  .symptom h3{font-size:21px;margin-bottom:4px}
+  .symptom p{color:var(--slate);font-size:16px}
+  .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;border:1px solid var(--line);color:var(--slate);margin-left:10px;vertical-align:middle;font-family:var(--sans)}
+  .tag.cause{border-color:var(--brass);color:#8a6a3a}
+
+  /* ---------- Insight band ---------- */
+  .insight{background:var(--off);padding:120px 0;position:relative;overflow:hidden}
+  .insight blockquote{font-family:var(--serif);font-size:clamp(30px,3.6vw,48px);line-height:1.18;color:var(--navy);max-width:900px;font-weight:400}
+  .insight blockquote .q{color:var(--slate);font-style:italic;display:block;font-size:.62em;margin-bottom:18px}
+  .insight p{margin-top:28px;max-width:680px;color:var(--slate);font-size:18px}
+  .insight .frames{position:absolute;right:-60px;top:50%;transform:translateY(-50%);width:420px;opacity:.55;pointer-events:none}
+
+  /* ---------- Approach ---------- */
+  .section-head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:64px}
+  .section-head p{color:var(--slate);font-size:18px}
+  .lenses{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line)}
+  .lens{padding:40px 34px 44px}
+  .lens+.lens{border-left:1px solid var(--line)}
+  .lens .num{font-family:var(--serif);font-style:italic;color:var(--brass);font-size:18px}
+  .lens .ic{width:44px;height:44px;color:var(--navy);margin:22px 0 22px}
+  .lens h3{margin-bottom:12px}
+  .lens ul{list-style:none;color:var(--slate);font-size:16px}
+  .lens li{padding:9px 0;border-top:1px solid var(--line)}
+  .outcomes{margin-top:80px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+  .outcome .ic{width:38px;height:38px;color:var(--navy);margin-bottom:16px}
+  .outcome .ic .hl{stroke:var(--brass)}
+  .outcome h4{font-family:var(--serif);font-weight:500;font-size:21px;color:var(--navy);margin-bottom:6px}
+  .outcome p{color:var(--slate);font-size:15.5px}
+  .outcomes-label{margin-top:96px;display:flex;align-items:center;gap:18px}
+  .outcomes-label::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  /* ---------- Offers ---------- */
+  .offers{background:var(--navy);color:var(--off)}
+  .offers h2{color:var(--off)}
+  .offers .section-head p{color:rgba(242,239,233,.7)}
+  .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;position:relative}
+  .offer{background:var(--navy-2);border:1px solid var(--line-dark);padding:38px 32px 34px;display:flex;flex-direction:column;transition:border-color .25s, transform .25s}
+  .offer:hover{border-color:rgba(176,141,87,.6);transform:translateY(-4px)}
+  .offer .tile{width:64px;height:64px;border-radius:10px;background:var(--off);display:grid;place-items:center;color:var(--navy);margin-bottom:28px}
+  .offer .tile svg{width:34px;height:34px}
+  .offer .tile .hl{stroke:var(--brass)}
+  .offer .step{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-light);font-weight:600}
+  .offer h3{color:var(--off);font-size:30px;margin:8px 0 6px}
+  .offer .what{font-family:var(--serif);font-style:italic;color:rgba(242,239,233,.72);font-size:18px;margin-bottom:18px}
+  .offer p{color:rgba(242,239,233,.72);font-size:15.5px}
+  .offer ul{list-style:none;margin:22px 0 0;font-size:15px;color:rgba(242,239,233,.85)}
+  .offer li{padding:10px 0 10px 22px;border-top:1px solid var(--line-dark);position:relative}
+  .offer li::before{content:"";position:absolute;left:0;top:19px;width:10px;height:1px;background:var(--brass)}
+  .offer .foot{margin-top:auto;padding-top:26px;font-size:13.5px;color:rgba(242,239,233,.55)}
+  .offer.entry{border-color:rgba(176,141,87,.55)}
+  .offer.entry .badge{align-self:flex-start;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;background:var(--brass);color:var(--navy);padding:4px 9px;margin-bottom:22px}
+  .platforms{margin-top:56px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;color:rgba(242,239,233,.7);font-size:15px}
+  .platforms .chip{border:1px solid var(--line-dark);padding:8px 14px;font-size:14px}
+  .platforms .chip.lead{border-color:var(--brass);color:var(--brass-light)}
+
+  /* ---------- Why us ---------- */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:56px}
+  .pillar{border-top:2px solid var(--navy);padding-top:26px}
+  .pillar .n{font-family:var(--serif);font-size:15px;color:var(--brass);font-style:italic;margin-bottom:14px}
+  .pillar h3{font-size:28px;margin-bottom:14px}
+  .pillar p{color:var(--slate);font-size:16.5px}
+  .compare{margin-top:88px;border:1px solid var(--line)}
+  .compare-row{display:grid;grid-template-columns:1.1fr 1.4fr 1.4fr;border-top:1px solid var(--line)}
+  .compare-row:first-child{border-top:0}
+  .compare-row > div{padding:20px 24px;font-size:15.5px}
+  .compare-row > div:first-child{font-weight:600;color:var(--navy)}
+  .compare-row > div:nth-child(2){color:var(--slate)}
+  .compare-row > div:nth-child(3){background:var(--off);color:var(--navy)}
+  .compare-row.head > div{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--slate);padding-top:16px;padding-bottom:16px}
+  .compare-row.head > div:nth-child(3){color:var(--brass)}
+
+  /* ---------- Name story ---------- */
+  .story{background:var(--off)}
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+  .story p{color:var(--slate);font-size:18px;margin-top:20px;max-width:520px}
+  .story .plan{background:var(--white);border:1px solid var(--line);padding:28px}
+  .story .plan svg{width:100%;height:auto}
+  .story .caption{font-size:12.5px;color:var(--slate);letter-spacing:.06em;margin-top:14px;display:flex;justify-content:space-between}
+
+  /* ---------- Who we help ---------- */
+  .who-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .who-card{border:1px solid var(--line);padding:40px 38px}
+  .who-card h3{margin:14px 0 14px}
+  .who-card p{color:var(--slate);font-size:16.5px}
+  .triggers{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+  .triggers span{font-size:14px;background:var(--off);color:var(--navy);padding:8px 13px}
+  .where{margin-top:28px;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;background:var(--navy);color:var(--off);padding:34px 38px}
+  .where h3{color:var(--off);font-size:24px}
+  .where ul{display:flex;flex-wrap:wrap;gap:10px 28px;list-style:none;font-size:15.5px;color:rgba(242,239,233,.8)}
+  .where li::before{content:"";display:inline-block;width:6px;height:6px;background:var(--brass);margin-right:10px;vertical-align:middle;transform:rotate(45deg)}
+
+  /* ---------- Proof ---------- */
+  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .proof{border:1px dashed rgba(176,141,87,.7);padding:32px 30px;background:linear-gradient(180deg,#fff, #fbfaf7)}
+  .proof .meta{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);font-weight:600}
+  .proof h3{font-size:22px;margin:14px 0 12px}
+  .proof p{color:var(--slate);font-size:15.5px}
+  .proof .result{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--serif);font-size:20px;color:var(--brass)}
+
+  /* ---------- People ---------- */
+  .people-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .person{display:grid;grid-template-columns:150px 1fr;gap:30px;align-items:start;border-top:2px solid var(--navy);padding-top:30px}
+  .photo{aspect-ratio:4/5;background:var(--off);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--serif);font-size:38px;color:var(--brass);position:relative}
+  .photo small{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-family:var(--sans);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+  .person h3{font-size:26px}
+  .person .role{font-size:14px;color:var(--brass);font-weight:600;letter-spacing:.04em;margin:4px 0 14px}
+  .person p{color:var(--slate);font-size:16px}
+  .associates{margin-top:36px;padding:26px 30px;background:var(--off);color:var(--navy);font-size:16.5px;display:flex;gap:18px;align-items:center}
+  .associates svg{width:34px;height:34px;flex:none}
+
+  /* ---------- Partners ---------- */
+  .partners{background:var(--navy);color:var(--off)}
+  .partners h2{color:var(--off)}
+  .partners p.lead{color:rgba(242,239,233,.72)}
+  .partner-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border-top:1px solid var(--line-dark)}
+  .partner{padding:30px 26px 10px 0}
+  .partner+.partner{padding-left:26px;border-left:1px solid var(--line-dark)}
+  .partner h4{font-family:var(--serif);font-weight:500;font-size:21px;margin-bottom:8px;color:var(--off)}
+  .partner p{font-size:15px;color:rgba(242,239,233,.65)}
+
+  /* ---------- Insights ---------- */
+  .insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .article{border-top:1px solid var(--line);padding-top:24px}
+  .article .meta{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);font-weight:600}
+  .article .meta .soon{color:var(--brass)}
+  .article h3{font-size:25px;margin:16px 0 12px}
+  .article p{color:var(--slate);font-size:15.5px}
+
+  /* ---------- Contact ---------- */
+  .contact{background:var(--navy);color:var(--off);position:relative;overflow:hidden;padding:130px 0}
+  .contact h2{color:var(--off);max-width:820px;font-size:clamp(34px,4vw,54px)}
+  .contact p.lead{color:rgba(242,239,233,.75);margin-top:22px}
+  .contact .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:40px;align-items:center}
+  .contact .addr{font-size:15px;color:rgba(242,239,233,.65)}
+  .contact .addr b{color:var(--brass-light);font-weight:500}
+  .contact .bg-art{position:absolute;right:-40px;bottom:-30px;width:520px;opacity:.35;pointer-events:none}
+
+  footer{background:#0F1A31;color:rgba(242,239,233,.6);padding:56px 0 40px;font-size:14px}
+  .foot-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+  .foot-grid .tagline{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--off);margin-top:16px}
+  .foot-links{display:flex;gap:56px}
+  .foot-links ul{list-style:none}
+  .foot-links li{padding:4px 0}
+  .foot-links a{text-decoration:none}
+  .foot-links a:hover{color:var(--brass-light)}
+  .foot-links h5{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-bottom:10px;font-weight:600}
+  .legal{margin-top:48px;padding-top:24px;border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px}
+
+  /* ---------- Reveal ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease, transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.draw path,.draw line,.draw circle{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    section{padding:84px 0}
+    .hero{padding-top:130px}
+    .hero-grid,.problem-grid,.section-head,.story-grid,.who-grid,.people-grid{grid-template-columns:1fr;gap:44px}
+    .hero-art{max-width:460px}
+    .lenses,.ladder,.pillars,.proof-grid,.insights-grid{grid-template-columns:1fr}
+    .lens+.lens{border-left:0;border-top:1px solid var(--line)}
+    .outcomes{grid-template-columns:1fr 1fr}
+    .partner-grid{grid-template-columns:1fr 1fr}
+    .partner:nth-child(3){padding-left:0;border-left:0}
+    .compare-row{grid-template-columns:1fr}
+    .compare-row.head{display:none}
+    .compare-row > div:first-child{padding-bottom:4px}
+    .where{grid-template-columns:1fr;gap:16px}
+    .insight .frames{display:none}
+    .nav ul{display:none;position:absolute;top:76px;left:0;right:0;background:var(--navy);flex-direction:column;align-items:flex-start;gap:0;padding:12px 28px 28px;border-top:1px solid var(--line-dark)}
+    .nav ul.open{display:flex}
+    .nav ul li{width:100%;padding:12px 0;border-bottom:1px solid var(--line-dark)}
+    .nav ul li:last-child{border:0;padding-top:20px}
+    .menu-btn{display:block}
+    header{background:rgba(20,33,61,.97)}
+  }
+  @media (max-width:620px){
+    body{font-size:16px}
+    .wrap{padding:0 20px}
+    .hero-foot{grid-template-columns:1fr}
+    .hero-foot div+div{padding-left:0;border-left:0;border-top:1px solid var(--line-dark)}
+    .outcomes,.partner-grid{grid-template-columns:1fr}
+    .partner+.partner{padding-left:0;border-left:0;border-top:1px solid var(--line-dark)}
+    .person{grid-template-columns:1fr}
+    .photo{max-width:180px}
+    .foot-links{gap:36px}
+  }
+</style>
+</head>
+<body>
+
+<!-- Icon sprite: fine-line set -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-sounding" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 3v19"/><path d="M13 7h3M13 11h3M13 15h3M13 19h3"/><path class="hl" d="M13.5 22h5l1.5 6h-8z"/>
+    </symbol>
+    <symbol id="i-helm" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="16" cy="16" r="12"/><path class="hl" d="M16 6.5l3 9.5-3 9.5-3-9.5z"/><circle cx="16" cy="16" r="1"/>
+    </symbol>
+    <symbol id="i-refit" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20.5 4.5a6 6 0 0 0-6.7 7.9L5 21.2a2.6 2.6 0 0 0 3.7 3.7l8.8-8.8a6 6 0 0 0 7.9-6.7l-3.6 3.6-3.3-.6-.6-3.3z"/><circle class="hl" cx="7.6" cy="22.4" r=".9"/>
+    </symbol>
+    <symbol id="i-ownership" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="11" r="4"/><path d="M4.5 26c0-4.4 3.4-8 7.5-8s7.5 3.6 7.5 8"/><circle class="hl" cx="22" cy="12" r="3.2"/><path class="hl" d="M20.5 18.4c.5-.1 1-.2 1.5-.2 3.4 0 6 2.9 6 6.6"/>
+    </symbol>
+    <symbol id="i-governance" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 4v23M10 27h12M6 8h20"/><path d="M8 8l-4 9h8z"/><path class="hl" d="M24 8l-4 9h8z"/><circle cx="16" cy="5" r="1"/>
+    </symbol>
+    <symbol id="i-change" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M25.5 13A10 10 0 0 0 7.2 10.5"/><path d="M6.5 5.5v5.2h5.2"/><path class="hl" d="M6.5 19a10 10 0 0 0 18.3 2.5"/><path class="hl" d="M25.5 26.5v-5.2h-5.2"/>
+    </symbol>
+    <symbol id="i-runcost" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4v24h24"/><path class="hl" d="M8 9l6 6 4-3 8 9"/><path class="hl" d="M26 16v5h-5"/>
+    </symbol>
+    <symbol id="i-board" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 16s5-8.5 13-8.5S29 16 29 16s-5 8.5-13 8.5S3 16 3 16z"/><circle class="hl" cx="16" cy="16" r="4.2"/><circle cx="16" cy="16" r="1"/>
+    </symbol>
+    <symbol id="i-stem" viewBox="0 0 40 48" fill="none" stroke-linecap="round">
+      <path d="M7 45C7 28 15 13 34 3" stroke="currentColor" stroke-width="4.6"/>
+      <path d="M15 45C15 31 21 19 34 11.5" stroke="#B08D57" stroke-width="1.7"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Stemson home">
+      <svg width="26" height="32" style="color:#F2EFE9"><use href="#i-stem"/></svg>
+      <span class="word">STEMSON</span>
+    </a>
+    <nav>
+      <ul id="menu">
+        <li><a href="#problem">The problem</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#offers">How we help</a></li>
+        <li><a href="#why">Why Stemson</a></li>
+        <li><a href="#people">People</a></li>
+        <li><a class="btn btn-brass" href="#contact">Book a Sounding</a></li>
+      </ul>
+    </nav>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h20M3 13h20M3 18h20"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Platform Rescue · EMEA &amp; GCC</div>
+        <h1>Your core platforms cost more every year <em class="brass">and deliver less.</em></h1>
+        <p class="lead">We get stalled platforms delivering again. ServiceNow first, and the same playbook works on every enterprise platform you run. We've owned these platforms ourselves, so we know it's rarely the technology.</p>
+        <div class="ctas">
+          <a class="btn btn-brass" href="#offers">Start with a 3-week Sounding <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="#insight">"Should we replace it?"</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <!-- Ship's plan: bow profile with stem (navy/white) and stemson (brass) -->
+        <svg viewBox="0 0 460 440" fill="none" class="draw">
+          <g stroke="rgba(242,239,233,.12)" stroke-width="1">
+            <line x1="20" y1="380" x2="440" y2="380"/><line x1="20" y1="320" x2="440" y2="320" stroke-dasharray="4 6"/>
+            <line x1="20" y1="260" x2="440" y2="260" stroke-dasharray="4 6"/><line x1="20" y1="200" x2="440" y2="200" stroke-dasharray="4 6"/>
+            <line x1="20" y1="140" x2="440" y2="140" stroke-dasharray="4 6"/><line x1="20" y1="80" x2="440" y2="80" stroke-dasharray="4 6"/>
+            <line x1="80" y1="40" x2="80" y2="400"/><line x1="160" y1="40" x2="160" y2="400"/><line x1="240" y1="40" x2="240" y2="400"/><line x1="320" y1="40" x2="320" y2="400"/>
+          </g>
+          <!-- hull frames -->
+          <g stroke="rgba(242,239,233,.32)" stroke-width="1">
+            <path class="d2" d="M60 380C60 300 70 190 90 70"/>
+            <path class="d2" d="M110 380C112 300 124 190 146 70"/>
+            <path class="d2" d="M160 380C164 300 178 196 204 72"/>
+            <path class="d3" d="M210 380C216 304 232 204 262 76"/>
+          </g>
+          <!-- deck / keel line -->
+          <path d="M40 60L300 60" stroke="rgba(242,239,233,.45)" stroke-width="1.2"/>
+          <path d="M40 392L270 392" stroke="rgba(242,239,233,.45)" stroke-width="1.2"/>
+          <!-- the stem -->
+          <path d="M270 392C320 360 372 240 400 40" stroke="#F2EFE9" stroke-width="6" stroke-linecap="round"/>
+          <!-- the stemson -->
+          <path class="d4" d="M250 380C296 346 340 236 364 62" stroke="#B08D57" stroke-width="2.4" stroke-linecap="round"/>
+          <!-- labels -->
+          <g font-family="Inter, sans-serif" font-size="10" letter-spacing="1.6" fill="rgba(242,239,233,.55)">
+            <text x="404" y="34">STEM</text>
+            <text x="372" y="124" fill="#CDB07F">STEMSON</text>
+            <text x="24" y="54">DECK</text><text x="24" y="410">KEEL</text>
+          </g>
+          <path d="M369 128L356 150" stroke="#CDB07F" stroke-width=".8"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-foot">
+      <div><strong>We've sat in the chair.</strong><span>Senior people who've owned and run the platforms we advise on.</span></div>
+      <div><strong>Fix it, don't replace it.</strong><span>Rip-and-replace just moves the debt to a new logo.</span></div>
+      <div><strong>One playbook, every platform.</strong><span>ServiceNow first, then the ERP and CRM estate.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section id="problem">
+  <div class="wrap problem-grid">
+    <div class="reveal">
+      <div class="eyebrow">The problem</div>
+      <h2 style="margin:16px 0 22px">The platform that was meant to speed you up is slowing you down.</h2>
+      <p class="lead">Over-customised. Nervously upgraded. Owned by nobody. The business works around it while run costs climb and the pace of change falls. We see five problems again and again, and two of them cause the other three.</p>
+    </div>
+    <div class="symptoms reveal">
+      <div class="symptom">
+        <svg class="ic"><use href="#i-board"/></svg>
+        <div><h3>Poor core platform health <span class="tag cause">Cause</span></h3><p>Years of customisation debt and sprawl that make every change harder than the last.</p></div>
+      </div>
+      <div class="symptom">
+        <svg class="ic"><use href="#i-governance"/></svg>
+        <div><h3>Legacy ways of running SaaS <span class="tag cause">Cause</span></h3><p>Project-era governance applied to a platform that's meant to evolve every release.</p></div>
+      </div>
+      <div class="symptom">
+        <svg class="ic"><use href="#i-change"/></svg>
+        <div><h3>Slow delivery <span class="tag">Symptom</span></h3><p>Demand piles up, upgrades become programmes, and the business stops asking.</p></div>
+      </div>
+      <div class="symptom">
+        <svg class="ic"><use href="#i-refit"/></svg>
+        <div><h3>Manual ways of working <span class="tag">Symptom</span></h3><p>Testing, releases and admin done by hand, so effort scales with headcount.</p></div>
+      </div>
+      <div class="symptom">
+        <svg class="ic"><use href="#i-ownership"/></svg>
+        <div><h3>Too much reliance on people <span class="tag">Symptom</span></h3><p>Key-person risk everywhere, and a platform only a few people dare to touch.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSIGHT ============ -->
+<section class="insight" id="insight">
+  <svg class="frames" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+    <g stroke="#14213D" stroke-opacity=".18" stroke-width="1">
+      <path d="M200 380C120 380 60 300 50 60"/><path d="M200 380C140 380 96 300 90 60"/><path d="M200 380C160 380 130 300 128 60"/><path d="M200 380C180 380 166 300 166 60"/>
+      <path d="M200 380C280 380 340 300 350 60"/><path d="M200 380C260 380 304 300 310 60"/><path d="M200 380C240 380 270 300 272 60"/><path d="M200 380C220 380 234 300 234 60"/>
+      <line x1="200" y1="40" x2="200" y2="390"/><line x1="30" y1="60" x2="370" y2="60"/>
+    </g>
+    <line x1="200" y1="60" x2="200" y2="380" stroke="#B08D57" stroke-width="1.5"/>
+  </svg>
+  <div class="wrap reveal">
+    <div class="eyebrow" style="margin-bottom:22px">The insight</div>
+    <blockquote>
+      <span class="q">"Should we replace it?"</span>
+      Usually, no. It's rarely the platform's fault. It's how it's owned, governed and changed. <em class="brass">Fix how you run it.</em>
+    </blockquote>
+    <p>A replacement programme is expensive, slow and risky, and if the operating model doesn't change, the same debt rebuilds on the new platform within a few years. We tell you which problem you actually have before you spend on the wrong answer.</p>
+  </div>
+</section>
+
+<!-- ============ APPROACH ============ -->
+<section id="approach">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">Our approach</div><h2 style="margin-top:16px">Three lenses. One honest answer.</h2></div>
+      <p>We look at the platform the way an owner would, not the way a vendor or an auditor would. People and process first, because that's where the cost and the risk really sit.</p>
+    </div>
+    <div class="lenses reveal">
+      <div class="lens">
+        <span class="num">01</span>
+        <svg class="ic"><use href="#i-ownership"/></svg>
+        <h3>People</h3>
+        <ul><li>Accountable platform ownership</li><li>Key-person risk</li><li>Whether the business really owns it</li></ul>
+      </div>
+      <div class="lens">
+        <span class="num">02</span>
+        <svg class="ic"><use href="#i-governance"/></svg>
+        <h3>Process</h3>
+        <ul><li>Demand control and decision rights</li><li>Product-led change</li><li>Upgrades and releases as routine work</li></ul>
+      </div>
+      <div class="lens">
+        <span class="num">03</span>
+        <svg class="ic"><use href="#i-sounding"/></svg>
+        <h3>Technology</h3>
+        <ul><li>Customisation debt</li><li>Platform sprawl</li><li>Licence waste</li></ul>
+      </div>
+    </div>
+
+    <div class="outcomes-label reveal"><span class="eyebrow">What changes for you</span></div>
+    <div class="outcomes reveal" style="margin-top:36px">
+      <div class="outcome"><svg class="ic"><use href="#i-runcost"/></svg><h4>Lower run cost</h4><p>Less spent keeping the lights on, more left for change.</p></div>
+      <div class="outcome"><svg class="ic"><use href="#i-change"/></svg><h4>Routine upgrades</h4><p>Releases become business as usual, not a nervous programme.</p></div>
+      <div class="outcome"><svg class="ic"><use href="#i-helm"/></svg><h4>Faster change</h4><p>The business gets what it asks for, in weeks rather than quarters.</p></div>
+      <div class="outcome"><svg class="ic"><use href="#i-board"/></svg><h4>Value the board can see</h4><p>A platform story the CFO and the board can follow and back.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OFFERS ============ -->
+<section class="offers" id="offers">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">How we help</div><h2 style="margin-top:16px">Diagnose. Advise. Lead the change.</h2></div>
+      <p>Start small and low-risk. Most clients begin with a Sounding, and go further only when the evidence says it's worth it.</p>
+    </div>
+    <div class="ladder reveal">
+      <article class="offer entry">
+        <span class="badge">Where most clients start</span>
+        <div class="tile"><svg><use href="#i-sounding"/></svg></div>
+        <span class="step">Diagnose</span>
+        <h3>Stemson Sounding</h3>
+        <div class="what">Platform Health Diagnostic</div>
+        <p>In three weeks we tell you whether you have a platform problem or an operating problem, and what to do about it.</p>
+        <ul><li>Fixed fee, fixed three weeks</li><li>Health scorecard across people, process and technology</li><li>Board-ready findings and a clear recommendation</li></ul>
+        <div class="foot">ServiceNow first. The scorecard works on any enterprise platform.</div>
+      </article>
+      <article class="offer">
+        <div class="tile"><svg><use href="#i-helm"/></svg></div>
+        <span class="step">Advise</span>
+        <h3>Stemson Helm</h3>
+        <div class="what">Monthly advisory retainer</div>
+        <p>A senior sounding board for the CIO and leadership team, from people who've made the same calls under the same pressure.</p>
+        <ul><li>Monthly cadence with your leadership</li><li>Board-ready platform strategy</li><li>Straight answers on replace-or-fix, partners and spend</li></ul>
+        <div class="foot">For leaders who want judgement on tap, not a programme.</div>
+      </article>
+      <article class="offer">
+        <div class="tile"><svg><use href="#i-refit"/></svg></div>
+        <span class="step">Lead the change</span>
+        <h3>Stemson Refit</h3>
+        <div class="what">Transformation leadership</div>
+        <p>Senior, hands-on leadership to land the change: operating model, platform teams and the partners who support them.</p>
+        <ul><li>Interim and fractional platform leadership</li><li>Move to product-led platform teams</li><li>Partner reset: in shape, delivering value, or replaced</li></ul>
+        <div class="foot">We stay until it sticks, then hand it back.</div>
+      </article>
+    </div>
+    <div class="platforms reveal">
+      <span>One playbook, every platform:</span>
+      <span class="chip lead">ServiceNow</span><span class="chip">ERP</span><span class="chip">CRM</span><span class="chip">ITSM &amp; enterprise SaaS</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY STEMSON ============ -->
+<section id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">Why Stemson</div><h2 style="margin-top:16px">We've sat in the chair.</h2></div>
+      <p>The big firms bring frameworks and junior teams. Boutique advisors bring opinions and leave. We bring senior judgement and the practical experience to land it.</p>
+    </div>
+    <div class="pillars reveal">
+      <div class="pillar"><div class="n">i.</div><h3>We've sat in the chair</h3><p>We've owned these platforms, carried the upgrade risk and answered to the board for them. Our advice comes from doing the job, not studying it.</p></div>
+      <div class="pillar"><div class="n">ii.</div><h3>Fix it, don't replace it</h3><p>Replacement is the expensive answer to the wrong question. We start with how the platform is run, because that's usually where the value is hiding.</p></div>
+      <div class="pillar"><div class="n">iii.</div><h3>One playbook, every platform</h3><p>The same patterns show up in ServiceNow, ERP and CRM. Fix it once and the approach travels across your whole estate.</p></div>
+    </div>
+
+    <div class="compare reveal" role="table" aria-label="How Stemson compares">
+      <div class="compare-row head" role="row"><div role="columnheader">The alternative</div><div role="columnheader">What you usually get</div><div role="columnheader">What you get with Stemson</div></div>
+      <div class="compare-row" role="row"><div role="cell">Large consultancies</div><div role="cell">A framework and a junior team learning on your time</div><div role="cell">Senior people who've run it, from day one</div></div>
+      <div class="compare-row" role="row"><div role="cell">Boutique advisors</div><div role="cell">A sharp opinion, then a handover</div><div role="cell">An opinion we'll stay and deliver</div></div>
+      <div class="compare-row" role="row"><div role="cell">Your platform partner</div><div role="cell">Advice shaped by the next statement of work</div><div role="cell">Independent advice that's on your side</div></div>
+      <div class="compare-row" role="row"><div role="cell">Doing nothing</div><div role="cell">Run costs rise, change slows, the replace debate gets louder</div><div role="cell">An evidence-based answer in three weeks</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NAME STORY ============ -->
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div class="reveal">
+      <div class="eyebrow">Why we're called Stemson</div>
+      <h2 style="margin-top:16px">Built to take the impact.</h2>
+      <p>A stemson is the hidden timber inside a ship's stem, the leading edge of the bow. You never see it, but it's what lets the ship meet the sea head-on.</p>
+      <p>That's our job. We strengthen the leading edge: the platforms and teams that meet change first, so they can take the impact and keep moving.</p>
+    </div>
+    <div class="reveal">
+      <div class="plan" aria-hidden="true">
+        <svg viewBox="0 0 520 360" fill="none">
+          <g stroke="#14213D" stroke-opacity=".12">
+            <line x1="20" y1="300" x2="500" y2="300"/><line x1="20" y1="240" x2="500" y2="240" stroke-dasharray="3 5"/><line x1="20" y1="180" x2="500" y2="180" stroke-dasharray="3 5"/><line x1="20" y1="120" x2="500" y2="120" stroke-dasharray="3 5"/><line x1="20" y1="60" x2="500" y2="60" stroke-dasharray="3 5"/>
+            <line x1="120" y1="30" x2="120" y2="330"/><line x1="220" y1="30" x2="220" y2="330"/><line x1="320" y1="30" x2="320" y2="330"/>
+          </g>
+          <path d="M30 40H360" stroke="#14213D" stroke-opacity=".5"/>
+          <path d="M30 316H300" stroke="#14213D" stroke-opacity=".5" stroke-width="2"/>
+          <path d="M300 316C360 296 424 196 452 40" stroke="#14213D" stroke-width="10" stroke-linecap="round"/>
+          <path d="M280 300C334 276 386 186 410 48" stroke="#B08D57" stroke-width="3.5" stroke-linecap="round"/>
+          <path d="M60 316C62 230 70 130 84 40M130 316C134 230 146 130 166 40M200 316C206 236 222 136 248 40" stroke="#14213D" stroke-opacity=".35"/>
+          <g font-family="Inter, sans-serif" font-size="11" letter-spacing="1.8">
+            <text x="458" y="36" fill="#14213D">STEM</text>
+            <text x="330" y="168" fill="#8a6a3a">STEMSON</text>
+          </g>
+          <path d="M392 160L404 150" stroke="#8a6a3a"/>
+        </svg>
+        <div class="caption"><span>BOW PROFILE · SHEER PLAN</span><span>THE STRENGTH YOU DON'T SEE</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO WE HELP ============ -->
+<section id="who">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">Who we work with</div><h2 style="margin-top:16px">Leaders who need a straight answer.</h2></div>
+      <p>CIOs, CTOs, COOs and CFOs who depend on an enterprise platform that's stopped pulling its weight, and the boards and investors who need it fixed.</p>
+    </div>
+    <div class="who-grid reveal">
+      <div class="who-card">
+        <svg width="40" height="40" style="color:var(--navy)"><use href="#i-helm"/></svg>
+        <h3>Technology and operations leaders</h3>
+        <p>You inherited a platform that costs too much and changes too slowly, or you're being asked to defend it. We give you an independent view you can take to the board, and the experience to act on it.</p>
+        <div class="triggers"><span>A new CIO</span><span>A failed upgrade or go-live</span><span>A replace-or-fix debate</span><span>A major licence renewal</span></div>
+      </div>
+      <div class="who-card">
+        <svg width="40" height="40" style="color:var(--navy)"><use href="#i-board"/></svg>
+        <h3>Boards and PE operating partners</h3>
+        <p>Platform cost and delivery speed sit right on the value-creation plan. We tell you quickly whether the platform is an asset or a drag, and what it'll take to turn it around.</p>
+        <div class="triggers"><span>Value-creation review</span><span>Post-acquisition integration</span><span>Cost pressure</span><span>An AI mandate</span></div>
+      </div>
+    </div>
+    <div class="where reveal">
+      <h3>Where we work</h3>
+      <ul><li>UK &amp; Ireland</li><li>France</li><li>Germany</li><li>The Nordics</li><li>UAE &amp; the GCC</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROOF (placeholders) ============ -->
+<section id="proof" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">Lessons from the chair</div><h2 style="margin-top:16px">Proof, not adjectives.</h2></div>
+      <p>Real stories from the platforms we've owned, run and rescued. Client names are shared only with permission.</p>
+    </div>
+    <div class="proof-grid reveal">
+      <div class="proof"><div class="meta">[SECTOR] · [PLATFORM]</div><h3>[STORY HEADLINE]</h3><p>[The problem in the client's words, what we changed, and how.]</p><div class="result">[CLIENT RESULT]</div></div>
+      <div class="proof"><div class="meta">[SECTOR] · [PLATFORM]</div><h3>[STORY HEADLINE]</h3><p>[The problem in the client's words, what we changed, and how.]</p><div class="result">[CLIENT RESULT]</div></div>
+      <div class="proof"><div class="meta">[SECTOR] · ERP or CRM</div><h3>[STORY HEADLINE]</h3><p>[The same playbook applied beyond ServiceNow.]</p><div class="result">[CLIENT RESULT]</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PEOPLE ============ -->
+<section id="people" style="background:var(--off)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">Our people</div><h2 style="margin-top:16px">Senior people. No bait and switch.</h2></div>
+      <p>The people you meet are the people who do the work. Every engagement is led by a founder and backed by a bench of vetted senior associates.</p>
+    </div>
+    <div class="people-grid reveal">
+      <div class="person">
+        <div class="photo">CP<small>Photo to come</small></div>
+        <div>
+          <h3>Chris Pope</h3>
+          <div class="role">CEO &amp; Co-Founder</div>
+          <p>A builder and platform owner who has seen platform change from both sides: running enterprise platforms as the customer, and leading product, delivery and customer success on the vendor side. [Two lines of cleared career proof to come.]</p>
+        </div>
+      </div>
+      <div class="person">
+        <div class="photo">[ ]<small>Photo to come</small></div>
+        <div>
+          <h3>[Co-founder name]</h3>
+          <div class="role">[Role] &amp; Co-Founder</div>
+          <p>[Short bio: the chairs they've sat in, the platforms they've run, and the change they've led.]</p>
+        </div>
+      </div>
+    </div>
+    <div class="associates reveal">
+      <svg><use href="#i-ownership"/></svg>
+      <span>Our associate network brings in former platform owners, architects and transformation leaders across ServiceNow, ERP and CRM, each vetted against the same bar: they've done the job.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section class="partners" id="partners">
+  <div class="wrap">
+    <div class="reveal" style="max-width:760px">
+      <div class="eyebrow">For partners</div>
+      <h2 style="margin:16px 0 20px">Better outcomes for the clients we share.</h2>
+      <p class="lead">We lead and advise. We don't compete for the build. When a platform is stuck, everyone around it loses, and we're often the fastest way to get it moving again.</p>
+    </div>
+    <div class="partner-grid reveal">
+      <div class="partner"><h4>Implementation partners</h4><p>An independent reset that gets a stalled programme back on track and the relationship back to delivering value.</p></div>
+      <div class="partner"><h4>Private equity</h4><p>Fast, evidence-based platform diagnostics for value-creation plans and post-deal integration.</p></div>
+      <div class="partner"><h4>Executive search</h4><p>Interim and fractional platform leaders while the permanent hire is found.</p></div>
+      <div class="partner"><h4>Complementary boutiques</h4><p>Specialists we bring in, and who bring us in, when the client needs both.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSIGHTS ============ -->
+<section id="insights">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">Thinking</div><h2 style="margin-top:16px">Notes from the leading edge.</h2></div>
+      <p>Plain-spoken points of view on why platforms stall, how to run them, and what the C-suite can do about it.</p>
+    </div>
+    <div class="insights-grid reveal">
+      <article class="article"><div class="meta"><span>Platform Rescue</span><span class="soon">Coming soon</span></div><h3>Should we replace it? Usually not.</h3><p>Why the replace-or-fix debate is usually the wrong question, and the three questions to ask instead.</p></article>
+      <article class="article"><div class="meta"><span>Operating model</span><span class="soon">Coming soon</span></div><h3>Upgrades shouldn't be a project.</h3><p>What changes when releases become routine work, and why it starts with ownership, not tooling.</p></article>
+      <article class="article"><div class="meta"><span>Leading change</span><span class="soon">Coming soon</span></div><h3>Who actually owns your platform?</h3><p>The single most predictive question in a platform health check, and what a good answer sounds like.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <svg class="bg-art" viewBox="0 0 520 360" fill="none" aria-hidden="true">
+    <path d="M220 340C300 310 380 200 420 20" stroke="#F2EFE9" stroke-opacity=".5" stroke-width="10" stroke-linecap="round"/>
+    <path d="M190 330C268 296 340 196 374 30" stroke="#B08D57" stroke-width="3.5" stroke-linecap="round"/>
+  </svg>
+  <div class="wrap reveal">
+    <div class="eyebrow">Start with a Sounding</div>
+    <h2 style="margin-top:18px">In three weeks, we'll tell you whether you have a platform problem or an operating problem.</h2>
+    <p class="lead">Fixed fee. Senior people. A clear recommendation you can take to the board, whether or not you work with us afterwards.</p>
+    <div class="ctas">
+      <a class="btn btn-brass" href="mailto:hello@[domain]">Book a conversation <span class="arrow">→</span></a>
+      <span class="addr">or email <b>hello@[domain]</b></span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top" aria-label="Stemson home">
+          <svg width="22" height="27" style="color:#F2EFE9"><use href="#i-stem"/></svg>
+          <span class="word" style="font-size:18px">STEMSON</span>
+        </a>
+        <div class="tagline">We've sat in the chair.</div>
+      </div>
+      <div class="foot-links">
+        <ul><h5>Stemson</h5><li><a href="#approach">Approach</a></li><li><a href="#offers">How we help</a></li><li><a href="#why">Why Stemson</a></li><li><a href="#story">Our name</a></li></ul>
+        <ul><h5>Connect</h5><li><a href="#partners">Partners</a></li><li><a href="#insights">Thinking</a></li><li><a href="#contact">Contact</a></li><li><a href="#">LinkedIn</a></li></ul>
+      </div>
+    </div>
+    <div class="legal"><span>© 2027 Stemson. [Registered company details]</span><span>EMEA · GCC</span></div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var header=document.querySelector('header');
+    var onScroll=function(){header.classList.toggle('scrolled', window.scrollY>30)};
+    window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+    var btn=document.getElementById('menuBtn'), menu=document.getElementById('menu');
+    btn.addEventListener('click',function(){var o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false')})});
+
+    var els=document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+      els.forEach(function(el){io.observe(el)});
+    } else { els.forEach(function(el){el.classList.add('in')}); }
+  })();
+</script>
+</body>
+</html>
