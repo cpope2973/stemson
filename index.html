@@ -185,12 +185,14 @@
   .proof .meta{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);font-weight:600}
   .proof h3{font-size:22px;margin:14px 0 12px}
   .proof p{color:var(--slate);font-size:15.5px}
-  .proof.real{border:1px solid var(--line);border-top:2px solid var(--brass);background:#fff}
+  .proof.real{border:1px solid var(--line);border-top:2px solid var(--brass);background:#fff;display:flex;flex-direction:column}
+  .proof.real .stats{margin-top:auto;min-height:166px;align-content:start}
+  .proof.real p:last-of-type{margin-bottom:22px}
   .proof.real p+p{margin-top:10px}
   .proof.real p strong{color:var(--navy);font-weight:600}
   .proof .stats{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:16px 12px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
   .proof .stats b{display:block;font-family:var(--serif);font-weight:500;font-size:24px;color:var(--brass);line-height:1.1}
-  .proof .stats span{font-size:12.5px;color:var(--slate)}
+  .proof .stats span{display:block;margin-top:2px;font-size:12.5px;line-height:1.4;color:var(--slate)}
   .proof .result{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--serif);font-size:20px;color:var(--brass)}
 
   /* ---------- People ---------- */
@@ -284,6 +286,7 @@
     .partner+.partner{padding-left:0;border-left:0;border-top:1px solid var(--line-dark)}
     .person{grid-template-columns:1fr}
     .photo{max-width:220px}
+    .proof.real .stats{min-height:0}
     .career{grid-template-columns:repeat(2,1fr)}
     .person{gap:24px}
     .foot-links{gap:36px}
@@ -630,7 +633,7 @@
     </div>
     <div class="proof-grid reveal">
       <div class="proof real"><div class="meta">Global top-50 services &amp; technology provider</div><h3>From fragmented platforms to one employee experience</h3><p><strong>The problem:</strong> employee journeys split across ServiceNow, Microsoft, Atlassian and new AI tools, run by fragmented teams. Technology sprawl, an inconsistent experience, and change that took too long to land.</p><p><strong>What changed:</strong> one employee experience, with idea-to-value cut from 6–8 weeks to 10 days and millions in committed spend put to work. Backlog and demand management automated. Releases got smaller, faster, more frequent and higher quality.</p><ul class="stats"><li><b>10 days</b><span>Idea to value</span></li><li><b>&lt;3 wks</b><span>Upgrades</span></li><li><b>Daily</b><span>Releases</span></li><li><b>90%+</b><span>Platform health</span></li></ul></div>
-      <div class="proof"><div class="meta">[SECTOR] · [PLATFORM]</div><h3>[STORY HEADLINE]</h3><p>[The problem in the client's words, what we changed, and how.]</p><div class="result">[CLIENT RESULT]</div></div>
+      <div class="proof real"><div class="meta">Fortune 500 logistics company</div><h3>From bureaucratic releases to rapid, compliant, high-quality delivery</h3><p><strong>The problem:</strong> a very large centre of excellence and multiple partners, held back by manual processes and inspection, fragmented toolchains and error-prone deployments. Releases had become slow and complicated.</p><p><strong>What changed:</strong> a highly automated pipeline and a redefined definition of done. Testing and quality moved into the sprint, with automated code checks built in.</p><ul class="stats"><li><b>2,000+</b><span>Hours a week repurposed</span></li><li><b>+90%</b><span>Automated testing</span></li><li><b>−70%</b><span>Deployment and upgrade time</span></li></ul></div>
       <div class="proof"><div class="meta">[SECTOR] · ERP or CRM</div><h3>[STORY HEADLINE]</h3><p>[The same playbook applied beyond ServiceNow.]</p><div class="result">[CLIENT RESULT]</div></div>
     </div>
   </div>
