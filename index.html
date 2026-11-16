@@ -195,6 +195,12 @@
   .proof .stats span{display:block;margin-top:2px;font-size:12.5px;line-height:1.4;color:var(--slate)}
   .proof .result{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--serif);font-size:20px;color:var(--brass)}
 
+  @media (min-width:981px){@supports (grid-template-rows:subgrid){
+    .proof-grid{grid-template-rows:repeat(5,auto);row-gap:0}
+    .proof.real{display:grid;grid-row:span 5;grid-template-rows:subgrid;row-gap:0}
+    .proof.real .meta{align-self:end}
+    .proof.real .stats{min-height:0;margin-top:0;align-self:start}
+  }}
   /* ---------- People ---------- */
   .people-grid{display:grid;grid-template-columns:1fr;gap:28px}
   .person{display:grid;grid-template-columns:240px minmax(0,640px);gap:48px;align-items:center;border-top:2px solid var(--navy);padding-top:36px}
