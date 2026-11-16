@@ -173,6 +173,12 @@
   .proof .meta{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--slate);font-weight:600}
   .proof h3{font-size:22px;margin:14px 0 12px}
   .proof p{color:var(--slate);font-size:15.5px}
+  .proof.real{border:1px solid var(--line);border-top:2px solid var(--brass);background:#fff}
+  .proof.real p+p{margin-top:10px}
+  .proof.real p strong{color:var(--navy);font-weight:600}
+  .proof .stats{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+  .proof .stats b{display:block;font-family:var(--serif);font-weight:500;font-size:24px;color:var(--brass);line-height:1.1}
+  .proof .stats span{font-size:12.5px;color:var(--slate)}
   .proof .result{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--serif);font-size:20px;color:var(--brass)}
 
   /* ---------- People ---------- */
@@ -606,7 +612,7 @@
       <p>Real stories from the platforms we've owned, run and rescued. Client names are shared only with permission.</p>
     </div>
     <div class="proof-grid reveal">
-      <div class="proof"><div class="meta">[SECTOR] · [PLATFORM]</div><h3>[STORY HEADLINE]</h3><p>[The problem in the client's words, what we changed, and how.]</p><div class="result">[CLIENT RESULT]</div></div>
+      <div class="proof real"><div class="meta">Global top-50 services &amp; technology provider</div><h3>From fragmented platforms to one employee experience</h3><p><strong>The problem:</strong> employee journeys split across ServiceNow, Microsoft, Atlassian and new AI tools, run by fragmented teams. Technology sprawl, an inconsistent experience, and change that took too long to land.</p><p><strong>What changed:</strong> one employee experience, with idea-to-value cut sharply and millions in committed spend put to work. Backlog and demand management automated. Releases got smaller, faster, more frequent and higher quality.</p><ul class="stats"><li><b>&lt;3 wks</b><span>Upgrades</span></li><li><b>Daily</b><span>Releases</span></li><li><b>90%+</b><span>Platform health</span></li></ul></div>
       <div class="proof"><div class="meta">[SECTOR] · [PLATFORM]</div><h3>[STORY HEADLINE]</h3><p>[The problem in the client's words, what we changed, and how.]</p><div class="result">[CLIENT RESULT]</div></div>
       <div class="proof"><div class="meta">[SECTOR] · ERP or CRM</div><h3>[STORY HEADLINE]</h3><p>[The same playbook applied beyond ServiceNow.]</p><div class="result">[CLIENT RESULT]</div></div>
     </div>
