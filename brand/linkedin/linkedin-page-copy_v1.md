@@ -4,7 +4,7 @@
 
 We strengthen the leading edge: the platforms and teams that meet change first, so they take the impact and keep moving.
 
-## About (1,497 characters)
+## About (1,514 characters)
 
 Most enterprise platforms cost more every year and deliver less. Upgrades get riskier, change gets slower, and eventually someone asks: "Should we replace it?"
 
@@ -15,7 +15,7 @@ Stemson gets stalled platforms delivering again. We start with ServiceNow, where
 We've sat in the chair. We've owned and run these platforms, carried the upgrade risk and answered to the board for the results. We hold ourselves to the same standard with clients.
 
 How we work:
-• Stemson Sounding: a fixed-fee, three-week diagnostic. It tells you whether you have a platform problem or an operating problem, and what to do about it.
+• Stemson Sounding: a fixed-fee diagnostic in two phases, under two weeks end to end. It tells you whether you have a platform problem or an operating problem, and what to do about it.
 • Stemson Helm: a monthly advisory retainer for CIOs and leadership teams.
 • Stemson Refit: senior, hands-on leadership to land the change, including resetting your implementation partners.
 
