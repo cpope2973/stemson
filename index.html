@@ -194,15 +194,15 @@
   .proof .result{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--serif);font-size:20px;color:var(--brass)}
 
   /* ---------- People ---------- */
-  .people-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-  .person{display:grid;grid-template-columns:150px 1fr;gap:30px;align-items:start;border-top:2px solid var(--navy);padding-top:30px}
+  .people-grid{display:grid;grid-template-columns:1fr;gap:28px}
+  .person{display:grid;grid-template-columns:240px minmax(0,640px);gap:48px;align-items:center;border-top:2px solid var(--navy);padding-top:36px}
   .photo{aspect-ratio:4/5;background:var(--off);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--serif);font-size:38px;color:var(--brass);position:relative}
   .photo.has-img{display:block;overflow:hidden;padding:0}
   .photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
   .photo small{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-family:var(--sans);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
-  .person h3{font-size:26px}
-  .person .role{font-size:14px;color:var(--brass);font-weight:600;letter-spacing:.04em;margin:4px 0 14px}
-  .person p{color:var(--slate);font-size:16px}
+  .person h3{font-size:34px}
+  .person .role{font-size:15px;color:var(--brass);font-weight:600;letter-spacing:.04em;margin:6px 0 18px}
+  .person p{color:var(--slate);font-size:18px;line-height:1.65}
   .associates{margin-top:36px;padding:26px 30px;background:var(--off);color:var(--navy);font-size:16.5px;display:flex;gap:18px;align-items:center}
   .associates svg{width:34px;height:34px;flex:none}
 
@@ -280,7 +280,8 @@
     .outcomes,.partner-grid{grid-template-columns:1fr}
     .partner+.partner{padding-left:0;border-left:0;border-top:1px solid var(--line-dark)}
     .person{grid-template-columns:1fr}
-    .photo{max-width:180px}
+    .photo{max-width:220px}
+    .person{gap:24px}
     .foot-links{gap:36px}
   }
 </style>
@@ -645,14 +646,6 @@
           <h3>Chris Pope</h3>
           <div class="role">CEO &amp; Co-Founder</div>
           <p>A builder and platform owner who has seen platform change from both sides: running enterprise platforms as the customer, and leading product, delivery and customer success on the vendor side. [Two lines of cleared career proof to come.]</p>
-        </div>
-      </div>
-      <div class="person">
-        <div class="photo">[ ]<small>Photo to come</small></div>
-        <div>
-          <h3>[Co-founder name]</h3>
-          <div class="role">[Role] &amp; Co-Founder</div>
-          <p>[Short bio: the chairs they've sat in, the platforms they've run, and the change they've led.]</p>
         </div>
       </div>
     </div>
