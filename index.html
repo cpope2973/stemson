@@ -125,7 +125,8 @@
   .offer li::before{content:"";position:absolute;left:0;top:19px;width:10px;height:1px;background:var(--brass)}
   .offer .foot{margin-top:auto;padding-top:26px;font-size:13.5px;color:rgba(242,239,233,.55)}
   .offer.entry{border-color:rgba(176,141,87,.55)}
-  .offer.entry .badge{align-self:flex-start;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;background:var(--brass);color:var(--navy);padding:4px 9px;margin-bottom:22px}
+  .offer.entry{position:relative}
+  .offer.entry .badge{position:absolute;bottom:100%;left:-1px;margin-bottom:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;background:var(--brass);color:var(--navy);padding:4px 9px;white-space:nowrap}
   .platforms{margin-top:56px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;color:rgba(242,239,233,.7);font-size:15px}
   .platforms .chip{border:1px solid var(--line-dark);padding:8px 14px;font-size:14px}
   .platforms .chip.lead{border-color:var(--brass);color:var(--brass-light)}
