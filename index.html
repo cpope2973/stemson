@@ -229,6 +229,28 @@
   .partner h4{font-family:var(--serif);font-weight:500;font-size:21px;margin-bottom:8px;color:var(--off)}
   .partner p{font-size:15px;color:rgba(242,239,233,.65)}
 
+  /* ---------- Giving back ---------- */
+  .giving{background:var(--off)}
+  .giving .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:72px}
+  .giving .stat-row div{padding:30px 26px 32px 0}
+  .giving .stat-row div+div{padding-left:26px;border-left:1px solid var(--line)}
+  .giving .stat-row b{display:block;font-family:var(--serif);font-weight:500;font-size:44px;line-height:1.05;color:var(--brass)}
+  .giving .stat-row span{display:block;margin-top:8px;font-size:15px;color:var(--slate);line-height:1.45}
+  .slipway{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}
+  .slipway h3{font-size:34px;margin:14px 0 16px}
+  .slipway .intro p{color:var(--slate);font-size:18px}
+  .slipway .principle{margin-top:30px;padding:24px 26px;background:var(--navy);color:var(--off);font-family:var(--serif);font-size:22px;line-height:1.35}
+  .slipway .principle small{display:block;font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--brass-light);margin-bottom:10px}
+  .commitments{list-style:none;border-top:1px solid var(--line)}
+  .commitments li{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid var(--line)}
+  .commitments svg{width:36px;height:36px;color:var(--navy)}
+  .commitments svg .hl{stroke:var(--brass)}
+  .commitments h4{font-family:var(--serif);font-weight:500;font-size:21px;color:var(--navy);margin-bottom:4px}
+  .commitments p{color:var(--slate);font-size:16px}
+  .giving .partner-cta{margin-top:26px;font-size:16px;color:var(--slate)}
+  .giving .partner-cta a{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:1px solid var(--brass)}
+  .giving .partner-cta a:hover{color:var(--brass)}
+  .giving .sources{margin-top:56px;font-size:12.5px;color:var(--slate)}
   /* ---------- Insights ---------- */
   .insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
   .article{border-top:1px solid var(--line);padding-top:24px}
@@ -262,13 +284,18 @@
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.draw path,.draw line,.draw circle{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
 
+  @media (min-width:981px) and (max-width:1180px){.nav ul{gap:20px}.nav ul a{font-size:13.5px}.logo .word{letter-spacing:.24em}.nav .btn{padding:10px 14px}}
   /* ---------- Responsive ---------- */
   @media (max-width:980px){
     section{padding:84px 0}
     .hero{padding-top:130px}
     .hero-grid,.problem-grid,.section-head,.story-grid,.who-grid,.people-grid{grid-template-columns:1fr;gap:44px}
     .hero-art{max-width:460px}
-    .lenses,.ladder,.pillars,.proof-grid,.insights-grid{grid-template-columns:1fr}
+    .lenses,.ladder,.pillars,.proof-grid,.insights-grid,.slipway{grid-template-columns:1fr}
+    .slipway{gap:44px}
+    .giving .stat-row{grid-template-columns:1fr 1fr}
+    .giving .stat-row div:nth-child(3){padding-left:0;border-left:0}
+    .giving .stat-row div:nth-child(n+3){border-top:1px solid var(--line)}
     .lens+.lens{border-left:0;border-top:1px solid var(--line)}
     .outcomes{grid-template-columns:1fr 1fr}
     .partner-grid{grid-template-columns:1fr 1fr}
@@ -350,6 +377,7 @@
         <li><a href="#offers">How we help</a></li>
         <li><a href="#why">Why Stemson</a></li>
         <li><a href="#people">People</a></li>
+        <li><a href="#giving">Giving back</a></li>
         <li><a class="btn btn-brass" href="#contact">Book a Sounding</a></li>
       </ul>
     </nav>
@@ -690,6 +718,38 @@
 </section>
 
 <!-- ============ INSIGHTS ============ -->
+<!-- ============ GIVING BACK ============ -->
+<section class="giving" id="giving">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div><div class="eyebrow">Giving back</div><h2 style="margin-top:16px">A million young people are waiting to be launched.</h2></div>
+      <p>Nearly one in eight 16 to 24-year-olds in the UK is not in education, employment or training. They're known as NEETs. Entry-level roles are disappearing fastest in technology, the industry we work in, and AI is changing the first rung of the ladder faster than schools or employers can adapt. We've spent our careers building platforms and teams. We think the most important thing we can build is a way in.</p>
+    </div>
+    <div class="stat-row reveal">
+      <div><b>981,000</b><span>Young people in the UK are NEET</span></div>
+      <div><b>13%</b><span>Of all 16 to 24-year-olds</span></div>
+      <div><b>£125bn</b><span>Estimated annual cost to the UK</span></div>
+      <div><b>45%</b><span>Of 24-year-old NEETs have never had a job</span></div>
+    </div>
+    <div class="slipway reveal">
+      <div class="intro">
+        <div class="eyebrow">Our programme</div>
+        <h3>Stemson Slipway</h3>
+        <p>A slipway is where a ship is built and launched. Slipway is our programme to help young people who are out of work, education or training take their first step into technology careers. It's built into how we run the firm, not added on afterwards.</p>
+        <div class="principle"><small>Our principle</small>Every engagement we deliver should open a door for someone who's still waiting for theirs.</div>
+        <p class="partner-cta">Want to partner with us on Slipway? <a href="#contact">Get in touch</a>.</p>
+      </div>
+      <ul class="commitments">
+        <li><svg><use href="#i-ownership"/></svg><div><h4>Time, not just money</h4><p>Every Stemson leader and associate gives [X] days a year to mentoring, mock interviews and career coaching for young people.</p></div></li>
+        <li><svg><use href="#i-sounding"/></svg><div><h4>A real first rung</h4><p>We create [X] paid placements a year, and ask our clients and partners to match them.</p></div></li>
+        <li><svg><use href="#i-change"/></svg><div><h4>Funding that follows the work</h4><p>[X]% of the fee from every engagement goes to youth employment charities working on the ground.</p></div></li>
+        <li><svg><use href="#i-refit"/></svg><div><h4>Skills that lead somewhere</h4><p>We partner with [charity / training partner] to give young people practical platform and digital skills employers are hiring for.</p></div></li>
+      </ul>
+    </div>
+    <p class="sources">Sources: ONS, Young people not in education, employment or training (NEET), UK, April to June 2026; Young People and Work review, interim report (GOV.UK), 2026.</p>
+  </div>
+</section>
+
 <section id="insights">
   <div class="wrap">
     <div class="section-head reveal">
@@ -733,7 +793,7 @@
       </div>
       <div class="foot-links">
         <ul><h5>Stemson</h5><li><a href="#approach">Approach</a></li><li><a href="#offers">How we help</a></li><li><a href="#why">Why Stemson</a></li><li><a href="#story">Our name</a></li></ul>
-        <ul><h5>Connect</h5><li><a href="#partners">Partners</a></li><li><a href="#insights">Thinking</a></li><li><a href="#contact">Contact</a></li><li><a href="https://www.linkedin.com/company/stemson" target="_blank" rel="noopener">LinkedIn</a></li></ul>
+        <ul><h5>Connect</h5><li><a href="#partners">Partners</a></li><li><a href="#giving">Giving back</a></li><li><a href="#insights">Thinking</a></li><li><a href="#contact">Contact</a></li><li><a href="https://www.linkedin.com/company/stemson" target="_blank" rel="noopener">LinkedIn</a></li></ul>
       </div>
     </div>
     <div class="legal"><span>© 2027 Stemson. [Registered company details]</span><span>EMEA · GCC</span></div>
